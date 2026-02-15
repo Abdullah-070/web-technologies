@@ -1,0 +1,137 @@
+/* Basic CSS Selectors and Properties - Simple Styling */
+
+/* Element Selectors */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #333;
+}
+
+h1 {
+    color: #1e40af;
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #0369a1;
+    border-bottom: 2px solid #0369a1;
+    padding-bottom: 8px;
+    margin-top: 30px;
+    font-size: 1.5em;
+}
+
+h3 {
+    color: #1e40af;
+    font-size: 1.2em;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+p {
+    margin: 10px 0;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+ul {
+    margin-left: 20px;
+    line-height: 1.8;
+    list-style-type:circle;
+    list-style-position: inside;
+    background-color: #f0f9ff;
+    padding: 15px 20px;
+    border-radius: 5px;
+}
+
+li {
+    margin-bottom: 8px;
+    color: #444;
+    padding-left: 8px;
+}
+
+img {
+    border-radius: 10%;
+    display: block;
+    margin: 0 auto 20px;
+    border: 3px solid #1e40af;
+}
+
+a {
+    color: #0369a1;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #1e40af;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 30px 0;
+}
+
+strong {
+    color: #1e40af;
+    font-weight: 600;
+}
+
+b {
+    color: #1e40af;
+    font-weight: 600;
+}
+
+/* Class Selectors */
+
+.contact {
+    background-color: #fff;
+    padding: 15px;
+    border-left: 4px solid #0369a1;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.footer {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px solid #ddd;
+}
+
+
+/* Text Decoration and Styling */
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Multiple property combinations */
+h2 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Grouping Selectors */
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+/* Text alignment variations */
+ul li {
+    text-align: left;
+}
+
+/* Background and padding combinations */
+strong, b {
+    background-color: #e0f2fe;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
