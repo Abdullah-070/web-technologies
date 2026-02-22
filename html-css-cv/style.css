@@ -1,137 +1,151 @@
-/* Basic CSS Selectors and Properties - Simple Styling */
+* {
+    margin: 0;
+    padding: 0;
+}
 
-/* Element Selectors */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
 }
 
-h1 {
-    color: #1e40af;
+.header {
     text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 10px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 15px;
+    margin: 0 auto 25px auto;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    width: 85%;
+    border: 1px solid #2c5f2d;
 }
 
-h2 {
-    color: #0369a1;
-    border-bottom: 2px solid #0369a1;
-    padding-bottom: 8px;
-    margin-top: 30px;
-    font-size: 1.5em;
+.header h1 {
+    color: #2c5f2d;
+    margin-bottom: 20px;
 }
 
-h3 {
-    color: #1e40af;
-    font-size: 1.2em;
-    margin-top: 15px;
-    margin-bottom: 5px;
+.header img {
+    width: 120px;
+    border-radius: 50%;
+    border: 4px solid #2c5f2d;
+    box-shadow: 0 4px 10px rgba(44, 95, 45, 0.2);
 }
 
-p {
-    margin: 10px 0;
+div:hover {
+    box-shadow: none;
+    transform: scale(1.05); 
+    transition: transform 0.5s ease;
+}
+
+.about,
+.contact,
+.skills,
+.education,
+.experience,
+.projects,
+.certifications,
+.achievements {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 0 auto 25px auto;
+    width: 85%;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #2c5f2d;
+}
+
+.about h2,
+.contact h2,
+.skills h2,
+.education h2,
+.experience h2,
+.projects h2,
+.certifications h2,
+.achievements h2 {
+    color: #2c5f2d;
+    font-size: 1.8em;
+    margin: 0 0 15px 0;
+    border-bottom: 3px solid #2c5f2d;
+}
+
+.about p {
+    color: #555;
     text-align: justify;
-    line-height: 1.8;
+    line-height: 1.7;
+    margin: 0;
 }
 
-ul {
-    margin-left: 20px;
-    line-height: 1.8;
-    list-style-type:circle;
-    list-style-position: inside;
-    background-color: #f0f9ff;
-    padding: 15px 20px;
-    border-radius: 5px;
+.contact p {
+    color: #555;
+    line-height: 1.7;
+    margin: 0;
 }
 
-li {
-    margin-bottom: 8px;
-    color: #444;
-    padding-left: 8px;
-}
-
-img {
-    border-radius: 10%;
-    display: block;
-    margin: 0 auto 20px;
-    border: 3px solid #1e40af;
-}
-
-a {
-    color: #0369a1;
+.contact a {
+    color: #2c5f2d;
     text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-    color: #1e40af;
-}
-
-hr {
-    border: none;
-    border-top: 1px solid #ddd;
-    margin: 30px 0;
-}
-
-strong {
-    color: #1e40af;
-    font-weight: 600;
-}
-
-b {
-    color: #1e40af;
-    font-weight: 600;
-}
-
-/* Class Selectors */
-
-.contact {
-    background-color: #fff;
-    padding: 15px;
-    border-left: 4px solid #0369a1;
-    border-radius: 4px;
-    text-align: center;
-}
-
-.footer {
-    text-align: center;
-    color: #666;
-    font-style: italic;
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 2px solid #ddd;
-}
-
-
-/* Text Decoration and Styling */
-h1 {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-/* Multiple property combinations */
-h2 {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Grouping Selectors */
-h1, h2, h3 {
     font-weight: bold;
 }
 
-/* Text alignment variations */
-ul li {
-    text-align: left;
+.contact a:hover {
+    text-decoration: underline;
 }
 
-/* Background and padding combinations */
-strong, b {
-    background-color: #e0f2fe;
-    padding: 2px 4px;
-    border-radius: 3px;
+.skills ul,
+.experience ul,
+.certifications ul,
+.achievements ul {
+    list-style-type: none;
+}
+
+.skills ul li {
+    background-color: #f8f9fa;
+    padding: 12px 15px;
+    margin: 0 0 10px 0;
+    border-radius: 8px;
+    border-left: 4px solid #2c5f2d;
+    color: #555;
+}
+
+.experience ul li {
+    background-color: #f8f9fa;
+    padding: 12px 15px;
+    margin: 0 0 10px 0;
+    border-radius: 8px;
+    border-left: 4px solid #2c5f2d;
+    color: #555;
+}
+
+.experience h3 {
+    color: #2c5f2d;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.education p {
+    color: #555;
+    line-height: 1.7;
+}
+
+.projects p {
+    color: #555;
+    line-height: 1.7;
+    margin: 10px 0 20px 0;
+    text-align: justify;
+}
+
+.projects h3 {
+    color: #2c5f2d;
+    margin: 20px 0 10px 0;
+}
+
+.certifications ul li,
+.achievements ul li {
+    background-color: #f8f9fa;
+    padding: 12px 15px;
+    margin: 0 0 10px 0;
+    border-radius: 8px;
+    border-left: 4px solid #2c5f2d;
+    color: #555;
 }
