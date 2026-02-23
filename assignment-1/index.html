@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="top">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,15 +11,141 @@
         <h1>Welcome to Auto Care</h1>
         <p>Your one-stop shop for all your automotive needs!</p>
     </header>
+    <div class="offer-ribbon">
+        <div class="ribbon-content">
+            <span>50% OFF on All Products</span>
+            <span>Free Shipping on Orders Above $50</span>
+            <span>Premium Quality Guaranteed</span>
+        </div>
+    </div>
     <nav>
         <a href="index.html" class="logo"><img src="Assets/logo.png" alt="Auto Care Logo"></a>
         <div class="nav-links">
             <a href="index.html">Home</a>
-            <a href="#products">Products</a>
+            <div class="dropdown">
+                <a href="#products" class="dropdown-toggle">Products</a>
+                <div class="dropdown-menu">
+                    <div class="dropdown-submenu">
+                        <a href="#electric" class="submenu-toggle">Electrical Parts </a>
+                        <div class="submenu">
+                            <a href="#alternator">Alternator</a>
+                            <a href="#starter">Starter Motor</a>
+                            <a href="#battery">Car Battery</a>
+                            <a href="#wiring">Wiring & Cables</a>
+                        </div>
+                    </div>
+                    <div class="dropdown-submenu">
+                        <a href="#tyres" class="submenu-toggle">Tyres & Wheels </a>
+                        <div class="submenu">
+                            <a href="#summer-tyres">Summer Tyres</a>
+                            <a href="#winter-tyres">Winter Tyres</a>
+                            <a href="#alloy-wheels">Alloy Wheels</a>
+                            <a href="#rim-care">Rim Care</a>
+                        </div>
+                    </div>
+                    <div class="dropdown-submenu">
+                        <a href="#fluids" class="submenu-toggle">Fluids & Lubricants </a>
+                        <div class="submenu">
+                            <a href="#engine-oil">Engine Oil</a>
+                            <a href="#brake-fluid">Brake Fluid</a>
+                            <a href="#coolant">Coolant</a>
+                            <a href="#transmission-fluid">Transmission Fluid</a>
+                        </div>
+                    </div>
+                    <div class="dropdown-submenu">
+                        <a href="#brakes" class="submenu-toggle">Brakes & Suspension </a>
+                        <div class="submenu">
+                            <a href="#brake-pads">Brake Pads</a>
+                            <a href="#brake-discs">Brake Discs</a>
+                            <a href="#shock-absorbers">Shock Absorbers</a>
+                            <a href="#struts">Struts</a>
+                        </div>
+                    </div>
+                    <div class="dropdown-submenu">
+                        <a href="#lights" class="submenu-toggle">Lights & Visibility </a>
+                        <div class="submenu">
+                            <a href="#headlight">Headlights</a>
+                            <a href="#rear-light">Rear Lights</a>
+                            <a href="#indicators">Indicators</a>
+                            <a href="#fog-lights">Fog Lights</a>
+                        </div>
+                    </div>
+                    <div class="dropdown-submenu">
+                        <a href="#filters" class="submenu-toggle">Filters & Maintenance </a>
+                        <div class="submenu">
+                            <a href="#air-filter">Air Filter</a>
+                            <a href="#oil-filter">Oil Filter</a>
+                            <a href="#cabin-filter">Cabin Filter</a>
+                            <a href="#spark-plugs">Spark Plugs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <a href="#contact">Contact Us</a>
             <a href="#about">About Us</a>
         </div>
     </nav>
+
+    <!-- Vision & Mission Section -->
+    <section class="vision-mission-section">
+        <div class="vision-mission-container">
+            <div class="vision-box">
+                <h2>Our Vision</h2>
+                <p>To be the leading automotive parts provider, delivering exceptional quality and service to every customer. We envision a world where vehicle maintenance is accessible, affordable, and hassle-free for all.</p>
+            </div>
+            <div class="mission-box">
+                <h2>Our Mission</h2>
+                <p>Our mission is to provide premium automotive products and services that exceed customer expectations. We are committed to offering competitive prices, reliable products, and outstanding customer support to keep your vehicles running smoothly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Selling Products Section -->
+    <section class="products-section" id="products">
+        <h2>Top Selling Products</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="Assets/engine_oil.jpg" alt="Engine Oil">
+                <h3>Premium Engine Oil</h3>
+                <p class="price">$25.99</p>
+                <p class="description">High-quality synthetic engine oil for all vehicle types.</p>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+            
+            <div class="product-card">
+                <img src="Assets/break_pads.jpg" alt="Brake Pads">
+                <h3>Brake Pads Set</h3>
+                <p class="price">$45.99</p>
+                <p class="description">Durable brake pads with excellent stopping power.</p>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+            
+            <div class="product-card">
+                <img src="Assets/battery.jpg" alt="Car Battery">
+                <h3>Car Battery</h3>
+                <p class="price">$89.99</p>
+                <p class="description">Heavy-duty car battery with 5-year warranty.</p>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+            
+            <div class="product-card">
+                <img src="Assets/shock_absorbers.jpg" alt="Shock Absorbers">
+                <h3>Shock Absorbers</h3>
+                <p class="price">$120.00</p>
+                <p class="description">Professional-grade shock absorbers for smooth ride.</p>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+            
+            <div class="product-card">
+                <img src="Assets/break_fluid.jpg" alt="Brake Fluid">
+                <h3>Brake Fluid</h3>
+                <p class="price">$18.99</p>
+                <p class="description">Professional brake fluid for all brake systems.</p>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    
     <footer>
         <p>&copy; 2026 Auto Care. All rights reserved.</p>
         <div class="footer-links">
@@ -31,5 +157,8 @@
             <a href="#sitemap" class="sitemap-link">Sitemap</a>
         </div>
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <a href="#top" class="scroll-to-top">▲</a>
 </body>
 </html>
