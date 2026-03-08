@@ -26,7 +26,14 @@
     <!-- NAVIGATION BAR WITH SEARCH -->
     <nav class="navbar">
         <div class="container">
-            <div class="navbar-content">
+            <!-- Hamburger Menu Button (Mobile Only) -->
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <div class="navbar-content" id="navbarContent">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="#top">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
@@ -276,5 +283,7 @@
     <!-- Scroll to Top Button -->
     <a href="#top" class="scroll-to-top">▲</a>
 
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
 </html>
