@@ -10,6 +10,9 @@ app.set("view engine", "ejs");
 // Serve static files from the 'public' directory
 app.use(express.static("public"));
 
+// Serve static files from the 'Assets' directory
+app.use(express.static("Assets"));
+
 // Define a route for the root URL ('/')
 app.get("/", function (req, res) {
     // Render the 'homepage' view
