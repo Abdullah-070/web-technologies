@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/products.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo-section">
+                <img src="/Assets/logo.png" alt="Auto Care Logo" class="logo-img">
+                <span class="logo-text">Auto Care</span>
+            </div>
+            <!-- Hamburger Icon -->
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <!-- Navigation Menu -->
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products">Shop</a></li>
+                    <li><a href="/#categories">Categories</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="#cart">Cart (0)</a>
+                    <a href="#login">Login</a>
+                    <a href="#register">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Catalog Page Header -->
+    <div class="catalog-header">
+        <div class="container">
+            <h1>Product Catalog</h1>
+            <p>Find the best parts for your vehicle</p>
+        </div>
+    </div>
+
+    <!-- Catalog Content -->
+    <div class="container catalog-container">
+        
+        <!-- Sidebar Filters -->
+        <aside class="sidebar">
+            <form action="/products" method="GET">
+                <h3>Filters</h3>
+                
+                <div class="filter-group">
+                    <label for="search">Search Product</label>
+                    <input type="text" id="search" name="search" placeholder="e.g. Engine Oil" value="<%= query.search || '' %>">
+                </div>
+                
+                <div class="filter-group">
+                    <label for="category">Category</label>
+                    <select id="category" name="category">
+                        <option value="All" <%= query.category === 'All' || !query.category ? 'selected' : '' %>>All Categories</option>
+                        <option value="Filters" <%= query.category === 'Filters' ? 'selected' : '' %>>Filters</option>
+                        <option value="Lights" <%= query.category === 'Lights' ? 'selected' : '' %>>Lights</option>
+                        <option value="Oils and Additives" <%= query.category === 'Oils and Additives' ? 'selected' : '' %>>Oils and Additives</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Price Range ($)</label>
+                    <div class="price-inputs">
+                        <input type="number" name="minPrice" placeholder="Min" value="<%= query.minPrice || '' %>" min="0">
+                        <span>-</span>
+                        <input type="number" name="maxPrice" placeholder="Max" value="<%= query.maxPrice || '' %>" min="0">
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-secondary btn-filter">Apply Filters</button>
+                <a href="/products" class="btn btn-primary btn-filter btn-clear-filter">Clear All</a>
+            </form>
+        </aside>
+
+        <!-- Main Products Grid -->
+        <main class="main-catalog">
+            
+            <% if (products.length === 0) { %>
+                <div class="empty-state">
+                    <h3>No products found matching your criteria.</h3>
+                    <p>Try adjusting your filters or search query.</p>
+                </div>
+            <% } else { %>
+                <div class="products-grid">
+                    <% products.forEach(product => { %>
+                        <div class="product-card">
+                            <img src="<%= product.image %>" alt="<%= product.name %>">
+                            <div class="product-info">
+                                <span class="product-category"><%= product.category %></span>
+                                <h3><%= product.name %></h3>
+                                <p><%= product.description %></p>
+                                <div class="product-footer">
+                                    <span class="product-price">$<%= product.price.toFixed(2) %></span>
+                                    <button class="btn btn-secondary">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    <% }) %>
+                </div>
+            <% } %>
+
+            <!-- Pagination -->
+            <% if (totalPages > 1) { %>
+                <div class="pagination">
+                    <% 
+                        // Reconstruct query string for pagination links
+                        let queryString = '';
+                        if (query.search) queryString += `&search=${query.search}`;
+                        if (query.category) queryString += `&category=${query.category}`;
+                        if (query.minPrice) queryString += `&minPrice=${query.minPrice}`;
+                        if (query.maxPrice) queryString += `&maxPrice=${query.maxPrice}`;
+                    %>
+
+                    <a href="?page=<%= currentPage - 1 %><%= queryString %>" class="page-link <%= currentPage === 1 ? 'disabled' : '' %>">Previous</a>
+                    
+                    <% for(let i = 1; i <= totalPages; i++) { %>
+                        <a href="?page=<%= i %><%= queryString %>" class="page-link <%= currentPage === i ? 'active' : '' %>"><%= i %></a>
+                    <% } %>
+                    
+                    <a href="?page=<%= currentPage + 1 %><%= queryString %>" class="page-link <%= currentPage === totalPages ? 'disabled' : '' %>">Next</a>
+                </div>
+            <% } %>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <p>&copy; 2026 Auto Care. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
