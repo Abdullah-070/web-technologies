@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo-section">
+                <img src="/Assets/logo.png" alt="Auto Care Logo" class="logo-img">
+                <span class="logo-text">Auto Care</span>
+            </div>
+            <!-- Hamburger Icon (visible on mobile/tablet) -->
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <!-- Navigation Menu -->
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="#cart">Cart (0)</a>
+                    <a href="#login">Login</a>
+                    <a href="#register">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Welcome to Auto Care</h1>
+            <p>Your place to find awesome automotive products.</p>
+            <a href="#featured" class="btn btn-primary">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="featured-section" id="featured">
+        <div class="container">
+            <h2>Featured Products</h2>
+
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <img src="/Assets/Air filter.png" alt="Air Filter">
+                    <div class="product-info">
+                        <span class="product-category">Filters</span>
+                        <h3>Air Filter</h3>
+                        <p>Premium quality air filter for engine protection</p>
+                        <div class="product-footer">
+                            <span class="product-price">$25.99</span>
+                            <button class="btn btn-secondary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <img src="/Assets/Engine Oil.png" alt="Engine Oil">
+                    <div class="product-info">
+                        <span class="product-category">Oil & Additives</span>
+                        <h3>Engine Oil</h3>
+                        <p>High-performance synthetic engine oil</p>
+                        <div class="product-footer">
+                            <span class="product-price">$15.99</span>
+                            <button class="btn btn-secondary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <img src="/Assets/Head light.png" alt="Head Light">
+                    <div class="product-info">
+                        <span class="product-category">Lights</span>
+                        <h3>Head Light</h3>
+                        <p>Bright LED headlight for improved visibility</p>
+                        <div class="product-footer">
+                            <span class="product-price">$25.99</span>
+                            <button class="btn btn-secondary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <img src="/Assets/Rear light.png" alt="Rear Light">
+                    <div class="product-info">
+                        <span class="product-category">Lights</span>
+                        <h3>Rear Light</h3>
+                        <p>Safety-focused rear light assembly</p>
+                        <div class="product-footer">
+                            <span class="product-price">$20.99</span>
+                            <button class="btn btn-secondary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <p>&copy; 2026 Auto Care. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Vanilla JavaScript for Responsive Menu -->
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
