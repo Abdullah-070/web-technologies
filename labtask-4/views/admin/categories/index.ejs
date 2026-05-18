@@ -1,6 +1,6 @@
 <div class="admin-card">
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-    <h3 style="margin: 0;">Product Categories</h3>
+  <div class="is-bbc98b25" >
+    <h3 class="is-e2b74ba6" >Product Categories</h3>
     <a href="/admin/categories/new" class="btn btn-primary">Add New Category</a>
   </div>
 
@@ -23,12 +23,12 @@
             <td><strong><%= category.name %></strong></td>
             <td><code><%= category.slug %></code></td>
             <td>
-              <div style="display: flex; gap: 0.5rem;">
+              <div class="is-5fa1c6fb" >
                 <a href="/admin/categories/edit/<%= category._id %>" class="btn btn-sm btn-secondary" title="Edit">
                   <i class="fas fa-edit"></i>
                 </a>
                 <form action="/admin/categories/delete/<%= category._id %>" method="POST" onsubmit="return confirm('Are you sure?')">
-                  <button type="submit" class="btn btn-sm" style="background: #ef4444; color: white;" title="Delete">
+                  <button type="submit" class="btn btn-sm is-3a25aca0"  title="Delete">
                     <i class="fas fa-trash"></i>
                   </button>
                 </form>
@@ -38,14 +38,14 @@
         <% }) %>
       <% } else { %>
         <tr>
-          <td colspan="3" style="text-align: center; padding: 2rem; color: #94a3b8;">No categories found.</td>
+          <td class="is-a775b0bd" colspan="3" >No categories found.</td>
         </tr>
       <% } %>
     </tbody>
   </table>
 
   <% if (totalPages > 1) { %>
-    <div style="display: flex; justify-content: center; gap: 0.5rem; margin-top: 1.5rem;">
+    <div class="is-14f6c92a" >
       <% if (currentPage > 1) { %>
         <a href="/admin/categories?page=<%= currentPage - 1 %>&sort=<%= sortField %>&order=<%= sortOrder %>" class="btn btn-sm btn-secondary">Prev</a>
       <% } %>

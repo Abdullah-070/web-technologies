@@ -64,6 +64,12 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.admin-nav li:nth-child(4) {
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding-top: 1rem;
+}
+
 .admin-nav a {
   display: flex;
   align-items: center;
@@ -126,6 +132,10 @@ body {
   color: var(--sidebar-text);
 }
 
+.sidebar-footer strong {
+  color: white;
+}
+
 /* Main Content */
 .admin-main {
   flex-grow: 1;
@@ -148,13 +158,82 @@ body {
   color: var(--text-main);
 }
 
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Flash Messages */
+.flash-messages {
+  margin-bottom: 1.5rem;
+}
+
+.flash-messages > div {
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border: 1px solid;
+  padding: 1rem;
+}
+
+.flash-success {
+  background: #d1fae5;
+  color: #065f46;
+  border-color: #a7f3d0;
+}
+
+.flash-error {
+  background: #fee2e2;
+  color: #991b1b;
+  border-color: #fecaca;
+}
+
 /* UI Components */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
 .admin-card {
   background-color: var(--card-bg);
   border-radius: 12px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
   padding: 2rem;
   margin-bottom: 2rem;
+  text-align: center;
+}
+
+.admin-card > div:first-child {
+  font-size: 2rem;
+  color: #cbd5e1;
+  margin-bottom: 1rem;
+}
+
+.admin-card h3 {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.admin-card p {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.admin-card p.success {
+  color: var(--success);
+}
+
+.admin-card p.primary {
+  color: var(--primary);
+}
+
+.admin-card p.warning {
+  color: #d69e2e;
 }
 
 .btn {

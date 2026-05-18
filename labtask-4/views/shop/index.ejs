@@ -1,13 +1,13 @@
-<div class="container page-header" style="text-align: center;">
+<div class="container page-header">
   <h2><%= title %></h2>
 </div>
 
 <% if (!locals.categorySlug) { %>
-<div class="container filters" style="margin-bottom: 2rem;">
-  <form action="/shop" method="GET" style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; background: #fff; padding: 1rem; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-    <input type="text" name="search" placeholder="Search by name..." value="<%= typeof query !== 'undefined' ? query.search : '' %>" style="padding: 0.5rem; flex: 1; min-width: 150px; border: 1px solid #ccc; border-radius: 4px;">
+<div class="container filters">
+  <form action="/shop" method="GET">
+    <input type="text" name="search" placeholder="Search by name..." value="<%= typeof query !== 'undefined' ? query.search : '' %>">
     
-    <select name="category" style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+    <select name="category">
       <option value="">All Categories</option>
       <% if(typeof categories !== 'undefined') { %>
         <% categories.forEach(cat => { %>
@@ -16,11 +16,11 @@
       <% } %>
     </select>
     
-    <input type="number" name="minPrice" placeholder="Min Price" value="<%= typeof query !== 'undefined' ? query.minPrice : '' %>" style="padding: 0.5rem; width: 100px; border: 1px solid #ccc; border-radius: 4px;" step="0.01">
-    <input type="number" name="maxPrice" placeholder="Max Price" value="<%= typeof query !== 'undefined' ? query.maxPrice : '' %>" style="padding: 0.5rem; width: 100px; border: 1px solid #ccc; border-radius: 4px;" step="0.01">
+    <input type="number" name="minPrice" placeholder="Min Price" value="<%= typeof query !== 'undefined' ? query.minPrice : '' %>" step="0.01">
+    <input type="number" name="maxPrice" placeholder="Max Price" value="<%= typeof query !== 'undefined' ? query.maxPrice : '' %>" step="0.01">
     
-    <button type="submit" class="btn btn-primary" style="padding: 0.5rem 1rem;">Filter</button>
-    <a href="/shop" class="btn btn-secondary" style="padding: 0.5rem 1rem; text-decoration: none; color: white; display: inline-block; text-align: center;">Reset</a>
+    <button type="submit" class="btn btn-primary">Filter</button>
+    <a href="/shop" class="btn btn-secondary">Reset</a>
   </form>
 </div>
 <% } %>
@@ -35,7 +35,7 @@
           </a>
           <div class="product-info">
             <span class="product-category"><%= product.category ? product.category.name : 'Uncategorized' %></span>
-            <a href="/product/<%= product.slug %>" style="text-decoration: none; color: inherit;">
+            <a href="/product/<%= product.slug %>" class="product-link">
               <h3 class="product-title"><%= product.name %></h3>
             </a>
             <p class="product-desc"><%= product.description %></p>
@@ -49,7 +49,7 @@
     </div>
     
     <% if (totalPages > 1) { %>
-      <div class="pagination" style="margin-top: 2rem; margin-bottom: 3rem; display: flex; justify-content: center; gap: 0.5rem;">
+      <div class="pagination">
         <% 
           let qs = '';
           if (typeof query !== 'undefined') {
@@ -64,21 +64,21 @@
         %>
         
         <% if (currentPage > 1) { %>
-          <a href="<%= baseUrl %>?page=<%= currentPage - 1 %><%= qs %>" class="btn btn-secondary" style="padding: 0.5rem 1rem;">&laquo; Prev</a>
+          <a href="<%= baseUrl %>?page=<%= currentPage - 1 %><%= qs %>" class="btn btn-secondary">&laquo; Prev</a>
         <% } %>
         
         <% for (let i = 1; i <= totalPages; i++) { %>
-          <a href="<%= baseUrl %>?page=<%= i %><%= qs %>" class="btn <%= i === currentPage ? 'btn-primary' : 'btn-secondary' %>" style="padding: 0.5rem 1rem;"><%= i %></a>
+          <a href="<%= baseUrl %>?page=<%= i %><%= qs %>" class="btn <%= i === currentPage ? 'btn-primary' : 'btn-secondary' %>"><%= i %></a>
         <% } %>
 
         <% if (currentPage < totalPages) { %>
-          <a href="<%= baseUrl %>?page=<%= currentPage + 1 %><%= qs %>" class="btn btn-secondary" style="padding: 0.5rem 1rem;">Next &raquo;</a>
+          <a href="<%= baseUrl %>?page=<%= currentPage + 1 %><%= qs %>" class="btn btn-secondary">Next &raquo;</a>
         <% } %>
       </div>
     <% } %>
     
   <% } else { %>
-    <div class="empty-state" style="text-align: center; padding: 3rem;">
+    <div class="empty-state">
       <h3>No products found</h3>
       <p>Please check back later or try another category.</p>
     </div>

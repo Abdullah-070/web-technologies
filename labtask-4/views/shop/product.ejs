@@ -2,26 +2,26 @@
   <h2><%= product.name %></h2>
 </div>
 
-<div class="container product-details-container" style="display: flex; gap: 2rem; margin-top: 2rem; padding-bottom: 4rem;">
-  <div class="product-image-container" style="flex: 1;">
-    <img src="<%= product.image %>" alt="<%= product.name %>" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+<div class="container product-details-container">
+  <div class="product-image-container">
+    <img src="<%= product.image %>" alt="<%= product.name %>" class="product-detail-image">
   </div>
-  <div class="product-info-container" style="flex: 1; display: flex; flex-direction: column; gap: 1rem;">
+  <div class="product-info-container">
     <div>
       <span class="product-category"><%= product.category ? product.category.name : 'Uncategorized' %></span>
     </div>
     <h3 class="product-name"><%= product.name %></h3>
     <p class="product-price-large">$<%= product.price.toFixed(2) %></p>
-    <div style="margin-top: 1rem;">
-      <p style="font-size: 1.1rem; line-height: 1.6; color: #4a5568;"><%= product.description %></p>
+    <div class="product-description-wrapper">
+      <p class="product-description"><%= product.description %></p>
     </div>
-    <div style="margin-top: 2rem;">
-      <form action="/cart/add/<%= product._id %>" method="GET" style="display: flex; gap: 1rem; align-items: center;">
-        <input type="number" name="quantity" value="1" min="1" style="width: 60px; padding: 0.5rem; border: 1px solid #cbd5e0; border-radius: 4px;">
-        <button type="submit" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem; cursor: pointer;">Add to Cart</button>
+    <div class="add-to-cart-section">
+      <form action="/cart/add/<%= product._id %>" method="GET" class="add-to-cart-form">
+        <input type="number" name="quantity" value="1" min="1" class="quantity-input">
+        <button type="submit" class="btn btn-primary add-to-cart-btn">Add to Cart</button>
       </form>
     </div>
-    <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e2e8f0;">
+    <div class="product-category-info">
       <p><strong>Category:</strong> <%= product.category ? product.category.name : 'N/A' %></p>
     </div>
   </div>
