@@ -1,14 +1,14 @@
-<div class="admin-card" style="max-width: 600px; margin: 0 auto;">
+<div class="admin-card extracted-style-1">
   <form action="/admin/categories/edit/<%= category._id %>" method="POST">
-    <div style="margin-bottom: 1rem;">
-      <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Category Name</label>
-      <input type="text" id="name" name="name" value="<%= category.name %>" required style="width: 100%; padding: 0.75rem; border: 1px solid #cbd5e0; border-radius: 4px;">
+    <div class="extracted-style-2">
+      <label for="name" class="extracted-style-3">Category Name</label>
+      <input type="text" id="name" name="name" value="<%= category.name %>" required class="extracted-style-4">
     </div>
-    <div style="margin-bottom: 1.5rem;">
-      <label for="description" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Description</label>
-      <textarea id="description" name="description" rows="5" style="width: 100%; padding: 0.75rem; border: 1px solid #cbd5e0; border-radius: 4px;"><%= category.description %></textarea>
+    <div class="extracted-style-5">
+      <label for="description" class="extracted-style-3">Description</label>
+      <textarea id="description" name="description" rows="5" class="extracted-style-4"><%= category.description %></textarea>
     </div>
-    <div style="display: flex; gap: 1rem;">
+    <div class="extracted-style-6">
       <button type="submit" class="btn btn-primary">Update Category</button>
       <a href="/admin/categories" class="btn btn-secondary">Cancel</a>
     </div>

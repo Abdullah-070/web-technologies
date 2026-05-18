@@ -1,7 +1,7 @@
-<div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+<div class="extracted-style-22">
   <!-- Order Items -->
   <div class="admin-card">
-    <h3 style="margin-bottom: 1.5rem;">Order Items</h3>
+    <h3 class="extracted-style-5">Order Items</h3>
     <table class="admin-table">
       <thead>
         <tr>
@@ -18,7 +18,7 @@
               <% if (item.product) { %>
                 <%= item.product.name %>
               <% } else { %>
-                <span style="color: #94a3b8;">(Product Deleted)</span>
+                <span class="extracted-style-23">(Product Deleted)</span>
               <% } %>
             </td>
             <td>$<%= item.price.toFixed(2) %></td>
@@ -28,9 +28,9 @@
         <% }) %>
       </tbody>
       <tfoot>
-        <tr style="font-weight: 700; font-size: 1.1rem;">
-          <td colspan="3" style="text-align: right; padding: 1rem;">Total Amount:</td>
-          <td style="padding: 1rem;">$<%= order.total.toFixed(2) %></td>
+        <tr class="extracted-style-24">
+          <td colspan="3" class="extracted-style-25">Total Amount:</td>
+          <td class="extracted-style-26">$<%= order.total.toFixed(2) %></td>
         </tr>
       </tfoot>
     </table>
@@ -39,17 +39,17 @@
   <!-- Order Info & Status Update -->
   <div>
     <div class="admin-card">
-      <h3 style="margin-bottom: 1.5rem;">Customer Info</h3>
+      <h3 class="extracted-style-5">Customer Info</h3>
       <p><strong>Name:</strong> <%= order.user.name %></p>
       <p><strong>Email:</strong> <%= order.user.email %></p>
       
-      <h3 style="margin: 1.5rem 0 1rem 0;">Shipping Info</h3>
+      <h3 class="extracted-style-27">Shipping Info</h3>
       <p><%= order.shippingInfo.address %></p>
       <p><%= order.shippingInfo.city %>, <%= order.shippingInfo.zip %></p>
     </div>
 
     <div class="admin-card">
-      <h3 style="margin-bottom: 1.5rem;">Order Status</h3>
+      <h3 class="extracted-style-5">Order Status</h3>
       <form action="/admin/orders/status/<%= order._id %>" method="POST">
         <div class="form-group">
           <select name="status" class="form-control">
@@ -59,12 +59,12 @@
             <option value="cancelled" <%= order.status === 'cancelled' ? 'selected' : '' %>>Cancelled</option>
           </select>
         </div>
-        <button type="submit" class="btn btn-primary" style="width: 100%;">Update Status</button>
+        <button type="submit" class="btn btn-primary extracted-style-28">Update Status</button>
       </form>
     </div>
   </div>
 </div>
 
-<div style="margin-top: 1rem;">
+<div class="extracted-style-29">
   <a href="/admin/orders" class="btn btn-secondary">Back to Orders</a>
 </div>

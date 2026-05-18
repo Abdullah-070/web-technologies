@@ -1,19 +1,19 @@
-<div class="admin-card" style="max-width: 800px; margin: 0 auto;">
+<div class="admin-card extracted-style-31">
   <form action="/admin/products" method="POST" enctype="multipart/form-data">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-      <div style="margin-bottom: 1rem;">
-        <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Product Name</label>
-        <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 1px solid #cbd5e0; border-radius: 4px;">
+    <div class="extracted-style-32">
+      <div class="extracted-style-2">
+        <label for="name" class="extracted-style-3">Product Name</label>
+        <input type="text" id="name" name="name" required class="extracted-style-4">
       </div>
-      <div style="margin-bottom: 1rem;">
-        <label for="price" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Price ($)</label>
-        <input type="number" id="price" name="price" step="0.01" min="0" required style="width: 100%; padding: 0.75rem; border: 1px solid #cbd5e0; border-radius: 4px;">
+      <div class="extracted-style-2">
+        <label for="price" class="extracted-style-3">Price ($)</label>
+        <input type="number" id="price" name="price" step="0.01" min="0" required class="extracted-style-4">
       </div>
     </div>
 
-    <div style="margin-bottom: 1rem;">
-      <label for="category" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Category</label>
-      <select id="category" name="category" required style="width: 100%; padding: 0.75rem; border: 1px solid #cbd5e0; border-radius: 4px;">
+    <div class="extracted-style-2">
+      <label for="category" class="extracted-style-3">Category</label>
+      <select id="category" name="category" required class="extracted-style-4">
         <option value="" disabled selected>Select a category</option>
         <% categories.forEach(cat => { %>
           <option value="<%= cat._id %>"><%= cat.name %></option>
@@ -21,19 +21,19 @@
       </select>
     </div>
 
-    <div style="margin-bottom: 1rem;">
-      <label for="image" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Product Image</label>
-      <input type="file" id="image" name="image" accept="image/*" style="width: 100%; padding: 0.5rem; border: 1px solid #cbd5e0; border-radius: 4px; background: #f8fafc;">
-      <small style="color: #64748b;">Or provide an external URL (optional if file is selected)</small>
-      <input type="text" name="image_url" placeholder="https://..." style="width: 100%; padding: 0.75rem; border: 1px solid #cbd5e0; border-radius: 4px; margin-top: 0.5rem;">
+    <div class="extracted-style-2">
+      <label for="image" class="extracted-style-3">Product Image</label>
+      <input type="file" id="image" name="image" accept="image/*" class="extracted-style-34">
+      <small class="extracted-style-36">Or provide an external URL (optional if file is selected)</small>
+      <input type="text" name="image_url" placeholder="https://..." class="extracted-style-37">
     </div>
 
-    <div style="margin-bottom: 1.5rem;">
-      <label for="description" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Description</label>
-      <textarea id="description" name="description" rows="5" style="width: 100%; padding: 0.75rem; border: 1px solid #cbd5e0; border-radius: 4px;"></textarea>
+    <div class="extracted-style-5">
+      <label for="description" class="extracted-style-3">Description</label>
+      <textarea id="description" name="description" rows="5" class="extracted-style-4"></textarea>
     </div>
 
-    <div style="display: flex; gap: 1rem;">
+    <div class="extracted-style-6">
       <button type="submit" class="btn btn-primary">Create Product</button>
       <a href="/admin/products" class="btn btn-secondary">Cancel</a>
     </div>

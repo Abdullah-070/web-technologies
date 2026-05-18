@@ -1,40 +1,40 @@
-<div class="admin-card" style="max-width: 800px; margin: 0 auto;">
+<div class="admin-card extracted-style-31">
   <form action="/admin/products/edit/<%= product._id %>" method="POST" enctype="multipart/form-data">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-      <div style="margin-bottom: 1rem;">
-        <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Product Name</label>
-        <input type="text" id="name" name="name" value="<%= product.name %>" required style="width: 100%; padding: 0.75rem; border: 1px solid #cbd5e0; border-radius: 4px;">
+    <div class="extracted-style-32">
+      <div class="extracted-style-2">
+        <label for="name" class="extracted-style-3">Product Name</label>
+        <input type="text" id="name" name="name" value="<%= product.name %>" required class="extracted-style-4">
       </div>
-      <div style="margin-bottom: 1rem;">
-        <label for="price" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Price ($)</label>
-        <input type="number" id="price" name="price" step="0.01" min="0" value="<%= product.price %>" required style="width: 100%; padding: 0.75rem; border: 1px solid #cbd5e0; border-radius: 4px;">
+      <div class="extracted-style-2">
+        <label for="price" class="extracted-style-3">Price ($)</label>
+        <input type="number" id="price" name="price" step="0.01" min="0" value="<%= product.price %>" required class="extracted-style-4">
       </div>
     </div>
 
-    <div style="margin-bottom: 1rem;">
-      <label for="category" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Category</label>
-      <select id="category" name="category" required style="width: 100%; padding: 0.75rem; border: 1px solid #cbd5e0; border-radius: 4px;">
+    <div class="extracted-style-2">
+      <label for="category" class="extracted-style-3">Category</label>
+      <select id="category" name="category" required class="extracted-style-4">
         <% categories.forEach(cat => { %>
           <option value="<%= cat._id %>" <%= product.category && product.category.toString() === cat._id.toString() ? 'selected' : '' %>><%= cat.name %></option>
         <% }) %>
       </select>
     </div>
 
-    <div style="margin-bottom: 1rem;">
-      <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Current Image</label>
-      <div style="margin-bottom: 1rem;">
-        <img src="<%= product.image %>" alt="Current Image" style="width: 100px; height: 100px; object-fit: cover; border-radius: 8px; border: 1px solid #e2e8f0;">
+    <div class="extracted-style-2">
+      <label class="extracted-style-3">Current Image</label>
+      <div class="extracted-style-2">
+        <img src="<%= product.image %>" alt="Current Image" class="extracted-style-33">
       </div>
-      <label for="image" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Replace Product Image</label>
-      <input type="file" id="image" name="image" accept="image/*" style="width: 100%; padding: 0.5rem; border: 1px solid #cbd5e0; border-radius: 4px; background: #f8fafc;">
+      <label for="image" class="extracted-style-3">Replace Product Image</label>
+      <input type="file" id="image" name="image" accept="image/*" class="extracted-style-34">
     </div>
 
-    <div style="margin-bottom: 1.5rem;">
-      <label for="description" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Description</label>
-      <textarea id="description" name="description" rows="5" style="width: 100%; padding: 0.75rem; border: 1px solid #cbd5e0; border-radius: 4px;"><%= product.description %></textarea>
+    <div class="extracted-style-5">
+      <label for="description" class="extracted-style-3">Description</label>
+      <textarea id="description" name="description" rows="5" class="extracted-style-4"><%= product.description %></textarea>
     </div>
 
-    <div style="display: flex; gap: 1rem;">
+    <div class="extracted-style-6">
       <button type="submit" class="btn btn-primary">Update Product</button>
       <a href="/admin/products" class="btn btn-secondary">Cancel</a>
     </div>
