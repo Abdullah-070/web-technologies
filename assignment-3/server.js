@@ -13,11 +13,6 @@ const globalMiddleware = require('./middlewares/global');
 const indexRoutes = require('./routes/index');
 const shopRoutes = require('./routes/shop/index');
 const cartRoutes = require('./routes/shop/cart');
-const checkoutRoutes = require('./routes/shop/checkout');
-const adminIndexRoutes = require('./routes/admin/index');
-const adminProductRoutes = require('./routes/admin/products');
-const adminCategoryRoutes = require('./routes/admin/categories');
-const adminOrderRoutes = require('./routes/admin/orders');
 const cors = require('cors');
 
 const app = express();
@@ -51,23 +46,10 @@ app.use(cookieParser());
 app.use(logger);
 app.use(globalMiddleware);
 
-// Set Admin Layout for admin routes
-app.use('/admin', (req, res, next) => {
-  res.locals.layout = 'admin-layout';
-  next();
-});
-
 // Mount Routes
 app.use('/', indexRoutes);
 app.use('/cart', cartRoutes);
-app.use('/checkout', checkoutRoutes);
-app.use('/', shopRoutes); 
-
-// Admin Routes
-app.use('/admin', adminIndexRoutes);
-app.use('/admin/products', adminProductRoutes);
-app.use('/admin/categories', adminCategoryRoutes);
-app.use('/admin/orders', adminOrderRoutes);
+app.use('/', shopRoutes);
 
 
 // 404 Handler

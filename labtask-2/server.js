@@ -1,22 +1,56 @@
-// Import the express module
-let express = require("express");
+const express = require('express');
 
-// Initialize an express application
-let app = express();
+const expressLayouts = require('express-ejs-layouts');
+const config = require('config');
+const path = require('path');
+const cookieParser = require('cookie-parser');
 
-// Set EJS as the templating engine
-app.set("view engine", "ejs");
+// Middlewares
+const logger = require('./middlewares/logger');
+const globalMiddleware = require('./middlewares/global');
 
-// Serve static files from the 'public' directory
-app.use(express.static("public"));
+// Routes
+const indexRoutes = require('./routes/index');
+const cors = require('cors');
 
-// Define a route for the root URL ('/')
-app.get("/", function (req, res) {
-  // Render the 'index.ejs' view with title
-  return res.render("index", { title: "Auto Care - Premium Automotive Products" });
+const app = express();
+
+// Middlewares
+app.use(cors());
+
+// Configuration
+const PORT = config.has('port') ? config.get('port') : 3000;
+
+// Set up EJS and Layouts
+app.use(expressLayouts);
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+app.set('layout', 'layout'); // default layout is views/layout.ejs
+
+// Built-in Middlewares
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(cookieParser());
+
+
+// Custom Middlewares
+app.use(logger);
+app.use(globalMiddleware);
+
+// Mount Routes
+app.use('/', indexRoutes);
+
+
+// 404 Handler
+app.use((req, res) => {
+  res.status(404).render('index', { 
+    title: '404 - Page Not Found',
+    description: 'The page you are looking for does not exist.'
+  });
 });
 
-// Start the server on port 3000
-app.listen(3000, function () {
-  console.log("Server Started at http://localhost:3000");
+// Start Server
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
 });
