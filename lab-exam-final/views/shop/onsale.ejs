@@ -1,0 +1,46 @@
+<div class="container page-header">
+  <h2><%= title %></h2>
+  <p>Great deals — updated daily. Browse all our discounted items below.</p>
+</div>
+
+<div class="container shop-container">
+  <% if (products.length > 0) { %>
+
+    <div id="product-list" class="product-grid">
+      <% products.forEach(product => { %>
+        <div class="product-card sale-card">
+          <span class="sale-badge">ON SALE</span>
+          <a href="/product/<%= product.slug %>">
+            <img src="<%= product.image %>" alt="<%= product.name %>" class="product-image">
+          </a>
+          <div class="product-info">
+            <span class="product-category"><%= product.category ? product.category.name : 'Uncategorized' %></span>
+            <a href="/product/<%= product.slug %>" class="product-link">
+              <h3 class="product-title"><%= product.name %></h3>
+            </a>
+            <p class="product-desc"><%= product.description %></p>
+            <div class="product-bottom">
+              <span class="product-price">$<%= product.price.toFixed(2) %></span>
+              <a href="/cart/add/<%= product._id %>" class="btn btn-secondary">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+
+    <div class="onsale-pagination" id="onsale-pagination">
+      <button id="prev-btn" class="btn btn-secondary" disabled>&laquo; Previous</button>
+      <span id="page-indicator" class="page-indicator">Page 1 of 1</span>
+      <button id="next-btn" class="btn btn-primary">Next &raquo;</button>
+    </div>
+
+  <% } else { %>
+    <div class="empty-state">
+      <h3>No on-sale products right now</h3>
+      <p>Check back soon for great deals!</p>
+    </div>
+  <% } %>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="/js/onsale.js"></script>

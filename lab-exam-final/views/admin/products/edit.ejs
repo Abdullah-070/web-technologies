@@ -1,0 +1,49 @@
+<div class="admin-card product-form-wrapper">
+  <form action="/admin/products/edit/<%= product._id %>" method="POST" enctype="multipart/form-data">
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="name">Product Name</label>
+        <input type="text" id="name" name="name" value="<%= product.name %>" required>
+      </div>
+      <div class="form-group">
+        <label for="price">Price ($)</label>
+        <input type="number" id="price" name="price" step="0.01" min="0" value="<%= product.price %>" required>
+      </div>
+    </div>
+
+    <div class="form-group-full">
+      <label for="category">Category</label>
+      <select id="category" name="category" required>
+        <% categories.forEach(cat => { %>
+          <option value="<%= cat._id %>" <%= product.category && product.category.toString() === cat._id.toString() ? 'selected' : '' %>>
+            <%= cat.name %>
+          </option>
+        <% }) %>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Current Image</label>
+      <img src="<%= product.image %>" alt="Current Image" class="current-image-preview">
+      <label for="image">Replace Product Image</label>
+      <input type="file" id="image" name="image" accept="image/*">
+    </div>
+
+    <div class="form-group-full">
+      <label for="description">Description</label>
+      <textarea id="description" name="description" rows="5"><%= product.description %></textarea>
+    </div>
+
+    <div class="checkbox-group">
+      <input type="checkbox" id="isOnSale" name="isOnSale" value="true" <%= product.isOnSale ? 'checked' : '' %>>
+      <label for="isOnSale">Mark as On Sale</label>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Update Product</button>
+      <a href="/admin/products" class="btn btn-secondary">Cancel</a>
+    </div>
+
+  </form>
+</div>

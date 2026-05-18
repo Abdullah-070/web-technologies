@@ -1,0 +1,28 @@
+<div class="hero">
+  <div class="hero-content">
+    <h1><%= title %></h1>
+    <p><%= description %></p>
+    <a href="/shop" class="btn btn-primary">Start Shopping</a>
+  </div>
+</div>
+
+<section class="featured-section container" id="featured">
+  <h2>Featured Products</h2>
+
+  <div class="product-grid">
+    <% featuredProducts.forEach(product => { %>
+      <div class="product-card">
+        <img src="<%= product.image %>" alt="<%= product.name %>" class="product-image">
+        <div class="product-info">
+          <span class="product-category"><%= product.category ? product.category.name : '' %></span>
+          <h3 class="product-title"><%= product.name %></h3>
+          <p class="product-desc"><%= product.description %></p>
+          <div class="product-bottom">
+            <span class="product-price">$<%= product.price.toFixed(2) %></span>
+            <a href="/cart/add/<%= product._id %>" class="btn btn-secondary">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</section>
